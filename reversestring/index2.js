@@ -7,13 +7,16 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
-  //split method - used to split strings into array substring
-  const arr = str.split('');
+  //create empty string
+  let reversed = '';
 
-  //reverse method - reverses the order of elements in an array
-  arr.reverse();
+  //this is a new syntax for 'for loops'
+  for (let character of str){
+    //takes each character of str and add it to the 'start' of the 'reversed' string
+    reversed = character + reversed;
+  }
 
-  //join method - joins the elements of an array into a string and returns a string
-  return arr.join('');
+  return reversed;
+
 }
 module.exports = reverse;
