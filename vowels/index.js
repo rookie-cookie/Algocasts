@@ -11,10 +11,10 @@ function vowels(str) {
   //create an array that will hold all Vowels
   const vowels = [];
   //convert the string into an array
-  const string = str.toLowerCase().split('');
+  const string = str.toLowerCase();
 
   //find the vowels using regex
-  let check = string.join().match(/[aeiou]/g);
+  let check = string.match(/[aeiou]/g);
   if (!check){
     //if nothing is found, return 0
     return 0;
