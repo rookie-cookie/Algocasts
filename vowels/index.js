@@ -12,7 +12,6 @@ function vowels(str) {
   const vowels = [];
   //convert the string into an array
   const string = str.toLowerCase();
-
   //find the vowels using regex
   let check = string.match(/[aeiou]/g);
   if (!check){
