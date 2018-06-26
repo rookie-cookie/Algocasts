@@ -8,6 +8,35 @@
 // Example:
 //   fib(4) === 3
 
+function memoize(fn) {
+  //memoized solution
+  const cache = {};
+  return function(...args){
+    //assume  multiple arguments for reusability
+    if (cache[args]){
+      return cache[args];
+    }
+    //apply method - calls a function with a given 'this'
+    //value and arguments provided as an array
+    const result = fn.apply(this, args);
+    cache[args] = result;
+
+    return result;
+  };
+}
+
+function slowfib(n) {
+  if (n<2){
+    return n;
+  }
+  return fib(n-1) + fib(n-2);
+}
+
+const fib = memoize(slowfib);
+
+module.exports = slowfib;
+
+/*
 function fib(n) {
   //recursion solution
   if (n<2){
@@ -15,3 +44,4 @@ function fib(n) {
   }
   return fib(n-1) + fib(n-2);
 }
+*/
