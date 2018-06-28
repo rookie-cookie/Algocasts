@@ -5,6 +5,8 @@
 // removing it.
 
 class Queue {
+  //queue implementation
+  //remember - fifo - first in first out
   constructor() {
     this.data = [];
   }
