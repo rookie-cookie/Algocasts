@@ -16,12 +16,14 @@ class LinkedList {
   constructor(){
     this.head = null;
   }
+
   insertFirst(data){
     //remember the node class takes 2 arguments
     //this.head becomes the second argument - it becomes the 'next' node
     //and the 'data' node is inserted
     this.head = new Node(data, this.head);
   }
+
   //should return the number of nodes in the linked list
   size(){
     let counter = 0;
@@ -36,9 +38,24 @@ class LinkedList {
     }
     return counter;
   }
+
   //should return the first node of linked list
   getFirst(){
     return this.head;
+  }
+
+  getLast(){
+    if (!this.head){
+      return null;
+    }
+    let node = this.head;
+    while (node){
+      //if node is null, that means it is the last node
+      if (!node.next){
+        return node;
+      }
+      node = node.next
+    }
   }
 }
 
