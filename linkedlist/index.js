@@ -9,7 +9,6 @@ class Node {
     this.data = data;
     this.next = next;
   }
-
 }
 
 class LinkedList {
@@ -87,6 +86,16 @@ class LinkedList {
       node = node.next;
     }
     previous.next = null;
+  }
+
+  insertLast(data){
+    const last = this.getLast();
+    if (last){
+      last.next = new Node(data);
+    }else {
+      //list is empty
+      this.head = new Node(data);
+    }
   }
 }
 
