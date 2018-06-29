@@ -22,6 +22,20 @@ class LinkedList {
     //and the 'data' node is inserted
     this.head = new Node(data, this.head);
   }
+  //should return the number of nodes in the linked list
+  size(){
+    let counter = 0;
+    let node = this.head;
+    //while the node is a truthy value
+    //if there is no this.head (which a node), then then while loop stops
+    while (node){
+      counter++;
+      //next propert is either head or null
+      //if null, then counter stops
+      node = node.next;
+    }
+    return counter;
+  }
 }
 
 /*
