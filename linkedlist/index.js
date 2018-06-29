@@ -66,8 +66,27 @@ class LinkedList {
     if (!this.head){
       return;
     }
-    //point the this.head to the second node (next
+    //point the this.head to the second node (next)
     this.head = this.head.next;
+  }
+
+  removeLast(){
+    //if list is empty
+    if(!this.head){
+      return;
+    }
+    //if there is only 1 node
+    if (!this.head.next){
+      this.head = null;
+      return;
+    }
+    let previous = this.head;
+    let node = this.head.next;
+    while(node.next){
+      previous = node;
+      node = node.next;
+    }
+    previous.next = null;
   }
 }
 
