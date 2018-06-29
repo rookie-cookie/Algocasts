@@ -27,14 +27,18 @@ class LinkedList {
     let counter = 0;
     let node = this.head;
     //while the node is a truthy value
-    //if there is no this.head (which a node), then then while loop stops
+    //if there is no this.head (which is a node), then then while loop stops
     while (node){
       counter++;
-      //next propert is either head or null
+      //next property is either head or null
       //if null, then counter stops
       node = node.next;
     }
     return counter;
+  }
+  //should return the first node of linked list
+  getFirst(){
+    return this.head;
   }
 }
 
