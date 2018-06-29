@@ -57,6 +57,18 @@ class LinkedList {
       node = node.next
     }
   }
+
+  clear(){
+    return this.head = null;
+  }
+
+  removeFirst(){
+    if (!this.head){
+      return;
+    }
+    //point the this.head to the second node (next
+    this.head = this.head.next;
+  }
 }
 
 /*
