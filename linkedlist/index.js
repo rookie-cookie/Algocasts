@@ -20,7 +20,8 @@ class LinkedList {
     //remember the node class takes 2 arguments
     //this.head becomes the second argument - it becomes the 'next' node
     //and the 'data' node is inserted
-    this.head = new Node(data, this.head);
+    // this.head = new Node(data, this.head);
+    this.insertAt(data,0);
   }
 
   //should return the number of nodes in the linked list
@@ -40,21 +41,23 @@ class LinkedList {
 
   //should return the first node of linked list
   getFirst(){
-    return this.head;
+    //return this.head;
+    return this.getAt(0);
   }
 
   getLast(){
-    if (!this.head){
-      return null;
-    }
-    let node = this.head;
-    while (node){
-      //if node is null, that means it is the last node
-      if (!node.next){
-        return node;
-      }
-      node = node.next
-    }
+    // if (!this.head){
+    //   return null;
+    // }
+    // let node = this.head;
+    // while (node){
+    //   //if node is null, that means it is the last node
+    //   if (!node.next){
+    //     return node;
+    //   }
+    //   node = node.next
+    // }
+    return this.getAt(this.size() - 1);
   }
 
   clear(){
