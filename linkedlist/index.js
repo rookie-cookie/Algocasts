@@ -117,7 +117,24 @@ class LinkedList {
     return null;
   }
 
-  
+  //remove node at a particular index
+  removeAt(index){
+    //if there is nothing in the list
+    if (!this.head){
+      return null;
+    }
+    //remove first element
+    if(index === 0){
+      this.head = this.head.next;
+      return;
+    }
+    const previous = this.getAt(index-1);
+    if(!previous || !previous.next){
+      return;
+    }
+    //skips the index that needs to be removed
+    previous.next = previous.next.next;
+  }
 }
 
 /*
