@@ -97,6 +97,27 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
+
+  //return the node at the provided index
+  getAt(index){
+    //if there is nothing in the list
+    if (!this.head){
+      return null;
+    }
+    let node = this.head;
+    let counter = 0;
+    while(node){
+      if(counter === index){
+        return node;
+      }
+      counter++;
+      node = node.next;
+    }
+    //if index does not exist
+    return null;
+  }
+
+  
 }
 
 /*
