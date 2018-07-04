@@ -16,7 +16,8 @@ function levelWidth(root) {
   //create counters array that will hold the width of the tree at each level
   const counters = [0];
   //create another array that will act as the queue or buffer for the working
-  //elements that is waiting to be processed in the tree - initialize it using the first node of the tree + the stopper value ex. 's'
+  //element that is waiting to be processed in the tree - initialize it using the first node of the tree + the stopper value 
+  //ex. 's'
   const arr = [root, 's'];
 
   while (arr.length > 1){
