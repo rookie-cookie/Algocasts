@@ -5,6 +5,18 @@
 // every node's right hand child is greater than
 // the parent
 
-function validate(node, min = null, max = null) {}
+function validate (node, min = null, max = null){
+  //check for out of bound values 
+  if ((max && node.data > max) || (min && node.data < min)){
+    return false;
+  }
+  if (node.left){
+    return validate(node.left, min, node.data);
+  }
+  if (node.right){
+    return validate(node.right, node.data, max);
+  }
+  return true;
+}
 
 module.exports = validate;
