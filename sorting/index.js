@@ -5,6 +5,7 @@
 //poor algorithm for large data sets
 
 function bubbleSort(arr) {
+//compares each pair of adjacent items and swaps them if they are in the wrong order
   for (let i=0; i < arr.length; i++){
     for (let j=0; j < (arr.length - i - 1); j++){
       if (arr[j] > arr[j+1]){
