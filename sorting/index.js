@@ -19,7 +19,7 @@ function bubbleSort(arr) {
 }
 
 function selectionSort(arr) {
-//assume that the first number in the array is the minimum
+//assume that the first element in the array is the minimum
 //then find if there is any number that has smaller value then swaps
   for (let i = 0; i < arr.length; i++){
     let indexOfMin = i;
@@ -42,7 +42,21 @@ function mergeSort(arr) {
 }
 
 function merge(left, right) {
-
+  //create an array that will hold the final sorted values
+  const results = [];
+  while (left.length && right.length){
+    if (left[0] < right[0]){
+      results.push(left.shift());
+    } else {
+      results.push(right.shift());
+    }
+  }
+  //es2016 - ...
+  //this will add whatever is left to the results array
+  return [...results, ...left, ...right];
 }
 
-module.exports = { bubbleSort, selectionSort, mergeSort };
+
+
+
+module.exports = { bubbleSort, selectionSort, mergeSort, merge };
