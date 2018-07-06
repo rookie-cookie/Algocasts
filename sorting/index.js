@@ -37,10 +37,6 @@ function selectionSort(arr) {
   return arr;
 }
 
-function mergeSort(arr) {
-
-}
-
 function merge(left, right) {
   //create an array that will hold the final sorted values
   const results = [];
@@ -56,7 +52,19 @@ function merge(left, right) {
   return [...results, ...left, ...right];
 }
 
+function mergeSort(arr) {
+  //split array and recursively join back the array - result is a sorted array
+  //check first if array only has 1 element inside of it
+  if (arr.length === 1){
+    return arr;
+  }
 
+  //divide the array into half
+  const center = Math.floor(arr.length / 2);
+  const left = arr.slice(0, center);
+  const right = arr.slice(center);
 
+  return merge(mergeSort(left), mergeSort(right))
+}
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
